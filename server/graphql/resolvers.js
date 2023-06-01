@@ -5,7 +5,9 @@ export const resolvers = {
   Query: {
     hello: () => "Hola gente",
     projects: async () => await Project.find(),
-    tasks: async () => await Task.find()
+    project: async (_, {_id}) => await Project.findById(_id), 
+    tasks: async () => await Task.find(),
+    task: async (_, {_id}) => await Task.findById(_id), 
   },
 
   Mutation: {
@@ -28,6 +30,16 @@ export const resolvers = {
       });
       const savedTask = await task.save();
       return savedTask;
+    },
+    deleteProject: async(_, {_id})=> {
+      const deletedProject = await Project.findByIdAndDelete(_id)
+      if(!deletedProject) throw new Error('Project not found')
+      return deletedProject
+    },
+    deleteTask: async(_, {_id})=> {
+      const deletedTask = await Task.findByIdAndDelete(_id)
+      if(!deletedTask) throw new Error('Task not found')
+      return deletedTask
     },
   },
 };
