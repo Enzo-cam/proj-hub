@@ -34,6 +34,9 @@ export const resolvers = {
     deleteProject: async(_, {_id})=> {
       const deletedProject = await Project.findByIdAndDelete(_id)
       if(!deletedProject) throw new Error('Project not found')
+
+      await Task.deleteMany({projectId: deletedProject._id})
+
       return deletedProject
     },
     deleteTask: async(_, {_id})=> {
@@ -41,5 +44,21 @@ export const resolvers = {
       if(!deletedTask) throw new Error('Task not found')
       return deletedTask
     },
+    updateProject: async(_, args) => {
+      const updatedProj = await Project.findByIdAndUpdate(args._id, args, {
+        // Indicamos que si algo se actualiza, devuelva el objeto nuevo.
+        new: true,
+      })
+      if(!updatedProj) throw new Error('Project not found.')
+      return updatedProj
+    },
+    updateTask: async(_, args) => {
+      const updateTask = await Task.findByIdAndUpdate(args._id, args, {
+        // Indicamos que si algo se actualiza, devuelva el objeto nuevo.
+        new: true,
+      })
+      if(!updatedProj) throw new Error('Task not found.')
+      return updateTask;
+    }
   },
 };
