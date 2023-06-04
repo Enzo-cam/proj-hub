@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client"
-import { GET_PROJECTS } from "../graphql/projects"
+import { GET_PROJECTS } from "../../graphql/projects"
 import ProjectCard from "./ProjectCard"
 
 const ProjectList = () => {
