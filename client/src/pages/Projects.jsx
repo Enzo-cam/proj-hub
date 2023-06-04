@@ -1,5 +1,5 @@
-import ProjectForm from "../components/ProjectForm"
-import ProjectList from "../components/ProjectList"
+import ProjectForm from "../components/Project/ProjectForm"
+import ProjectList from "../components/Project/ProjectList"
 
 const Projects = () => {
     return (
