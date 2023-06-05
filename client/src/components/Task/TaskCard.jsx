@@ -1,8 +1,12 @@
 import React from 'react'
 
-const TaskCard = () => {
+const TaskCard = ({ task }) => {
+
   return (
-    <div>TaskCard</div>
+    <div>
+      <h1>{task.title}</h1>
+      <button>Eliminar</button>
+    </div>
   )
 }
 
