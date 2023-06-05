@@ -31,19 +31,24 @@ const ProjectForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="w-2/5">
         {error && <p>Ha sucedido un error {error.message}</p>}
-      <input type="text" name="name" placeholder="Nombre del proyecto" onChange={handleChange} />
+      <input type="text" name="name" placeholder="Nombre del proyecto" onChange={handleChange} 
+        className="bg-zinc-800 text-white rounded-lg shadow-lg p-4 block w-full mb-3"
+      />
       <textarea
         name="description"
         rows="3"
+        resize="none"
         placeholder="Descripcion del proyecto...."
         onChange={handleChange}
+        className="bg-zinc-800 text-white rounded-lg shadow-lg p-4 block w-full mb-3"
       ></textarea>
         <button
             disabled={!project.name || !project.description || loading}
+            className="bg-yellow-400 hover:bg-yellow-600 p-2 rounded-lg font-bold text-black disabled:bg-gray-400 disabled:text-gray-300"
         >
-            Guardar
+            Crear proyecto
         </button>
     </form>
   );

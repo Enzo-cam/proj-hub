@@ -23,8 +23,8 @@ const TaskForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="title" />
-      <button>Añadir tarea</button>
+      <input className='bg-zinc-900 text-white w-full p-2 rounded-lg mb-2' type="text" name="title" placeholder='Añada tareas' />
+      <button className='bg-sky-800 w-full rounded-lg p-2 mb-4'>Añadir tarea</button>
     </form>
   )
 }

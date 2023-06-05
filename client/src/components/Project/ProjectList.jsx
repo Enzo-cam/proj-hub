@@ -9,7 +9,7 @@ const ProjectList = () => {
     if(error) return <p>An error ocurred, please reload.</p>
 
     return (
-      <div>
+      <div className="overflow-y-auto h-72 w-full px-2">
         {
             data.projects.map(project => (
               <ProjectCard
