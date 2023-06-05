@@ -7,13 +7,10 @@ const ProjectForm = () => {
     name: "",
     description: "",
   });
+  
   const [createProject, {loading, error}] = useMutation(CREATE_PROJECT, {
-    refetchQueries: [
-        {
-            query: GET_PROJECTS
-        }, 
-        "GetProjects"
-    ]
+    // Una vez ejecutado el Create, vamos a hacer un llamado a Get para actualizar la lista de los proyectos
+    refetchQueries: ["getProjects"]
   })
 
   const handleChange = ({target: {name, value}}) => {
