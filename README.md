@@ -10,8 +10,8 @@ This project is a web application that allows the creation and management of pro
 
 ## Technologies Used
 
-- Frontend: React and TailwindCSS.
-- Backend: Node.js and GraphQL.
+- Frontend: React - TailwindCSS - ApolloClient.
+- Backend: Node.js - GraphQL - Apollo.
 - Database: MongoDB.
 
 ## Prerequisites
